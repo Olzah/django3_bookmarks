@@ -1,0 +1,5 @@
+/db.sqlite3
+/account/__pycache__/
+/account/migrations/
+/bookmarks/__pycache__/
+/bookmarks/migrations/
