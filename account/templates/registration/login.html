@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Logowanie{% endblock title %}
+
+
+{% block content %}
+<h1>Logowanie</h1>
+
+{% if form.errors %}
+    <p>
+        Nazwa uzytkownika lub hasa s niepoprawne! 
+        Sprobj ponownie!
+    </p>
+{% else %}
+    <p>Wypejnij ponizszy formuliarz aby sie zalogowac</p>
+{% endif %}
+<div class="login-form">
+    <form action="{% url 'login' %}" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        <p><input type="submit" value="Zaloguj"/></p>
+    </form>
+</div>
+    
+{% endblock content %}
+    
